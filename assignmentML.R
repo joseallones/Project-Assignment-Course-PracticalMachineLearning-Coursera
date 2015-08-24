@@ -25,5 +25,5 @@ confusionMatrix(data = classesPrediction_randomForest, testing$classe)
 
 
 rf_caret <- train(x=training[,-53],y=training$classe, method = "rf", ntree=300);
-classesPrediction_rf_caret <- predict(RFFit, newdata = testing[,-53])
+classesPrediction_rf_caret <- predict(rf_caret, newdata = testing[,-53])
 confusionMatrix(data = classesPrediction_rf_caret, testing$classe)
